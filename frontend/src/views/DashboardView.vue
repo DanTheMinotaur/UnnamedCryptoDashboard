@@ -1,3 +1,9 @@
+<script setup>
+import BarWeekly from '../components/charts/BarWeekly.vue'
+import LineM from '../components/charts/LineMonthy.vue'
+import LineY from '../components/charts/LineYearly.vue'
+</script>
+
 <template>
     <div class="container-fluid py-4">
       <div class="row">
@@ -76,7 +82,8 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+                  <!-- <canvas id="chart-bars" class="chart-canvas" height="170"></canvas> -->
+                  <BarWeekly id="chart-bars" class="chart-canvas" height="170"/>
                 </div>
               </div>
             </div>
@@ -96,7 +103,7 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-line" class="chart-canvas" height="170"></canvas>
+                  <LineM id="chart-line-tasks" class="chart-canvas" height="170"/>
                 </div>
               </div>
             </div>
@@ -116,7 +123,8 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-line-tasks" class="chart-canvas" height="170"></canvas>
+                  <!-- <canvas id="chart-line-tasks" class="chart-canvas" height="170"></canvas> -->
+                  <LineY id="chart-line-tasks" class="chart-canvas" height="170"/>
                 </div>
               </div>
             </div>
