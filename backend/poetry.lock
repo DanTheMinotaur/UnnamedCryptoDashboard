@@ -135,6 +135,20 @@ yarl = ">=1.0,<2.0"
 speedups = ["Brotli", "aiodns", "brotlicffi"]
 
 [[package]]
+name = "aioresponses"
+version = "0.7.6"
+description = "Mock out requests made by ClientSession from aiohttp package"
+optional = false
+python-versions = "*"
+files = [
+    {file = "aioresponses-0.7.6-py2.py3-none-any.whl", hash = "sha256:d2c26defbb9b440ea2685ec132e90700907fd10bcca3e85ec2f157219f0d26f7"},
+    {file = "aioresponses-0.7.6.tar.gz", hash = "sha256:f795d9dbda2d61774840e7e32f5366f45752d1adc1b74c9362afd017296c7ee1"},
+]
+
+[package.dependencies]
+aiohttp = ">=3.3.0,<4.0.0"
+
+[[package]]
 name = "aiosignal"
 version = "1.3.1"
 description = "aiosignal: a list of registered asynchronous callbacks"
@@ -1265,23 +1279,77 @@ files = [
 
 [[package]]
 name = "pytest"
-version = "8.0.2"
+version = "8.1.1"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pytest-8.0.2-py3-none-any.whl", hash = "sha256:edfaaef32ce5172d5466b5127b42e0d6d35ebbe4453f0e3505d96afd93f6b096"},
-    {file = "pytest-8.0.2.tar.gz", hash = "sha256:d4051d623a2e0b7e51960ba963193b09ce6daeb9759a451844a21e4ddedfc1bd"},
+    {file = "pytest-8.1.1-py3-none-any.whl", hash = "sha256:2a8386cfc11fa9d2c50ee7b2a57e7d898ef90470a7a34c4b949ff59662bb78b7"},
+    {file = "pytest-8.1.1.tar.gz", hash = "sha256:ac978141a75948948817d360297b7aae0fcb9d6ff6bc9ec6d514b85d5a65c044"},
 ]
 
 [package.dependencies]
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
 iniconfig = "*"
 packaging = "*"
-pluggy = ">=1.3.0,<2.0"
+pluggy = ">=1.4,<2.0"
 
 [package.extras]
-testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+testing = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+
+[[package]]
+name = "pytest-aiohttp"
+version = "1.0.5"
+description = "Pytest plugin for aiohttp support"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pytest-aiohttp-1.0.5.tar.gz", hash = "sha256:880262bc5951e934463b15e3af8bb298f11f7d4d3ebac970aab425aff10a780a"},
+    {file = "pytest_aiohttp-1.0.5-py3-none-any.whl", hash = "sha256:63a5360fd2f34dda4ab8e6baee4c5f5be4cd186a403cabd498fced82ac9c561e"},
+]
+
+[package.dependencies]
+aiohttp = ">=3.8.1"
+pytest = ">=6.1.0"
+pytest-asyncio = ">=0.17.2"
+
+[package.extras]
+testing = ["coverage (==6.2)", "mypy (==0.931)"]
+
+[[package]]
+name = "pytest-asyncio"
+version = "0.23.5.post1"
+description = "Pytest support for asyncio"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pytest-asyncio-0.23.5.post1.tar.gz", hash = "sha256:b9a8806bea78c21276bc34321bbf234ba1b2ea5b30d9f0ce0f2dea45e4685813"},
+    {file = "pytest_asyncio-0.23.5.post1-py3-none-any.whl", hash = "sha256:30f54d27774e79ac409778889880242b0403d09cabd65b727ce90fe92dd5d80e"},
+]
+
+[package.dependencies]
+pytest = ">=7.0.0,<9"
+
+[package.extras]
+docs = ["sphinx (>=5.3)", "sphinx-rtd-theme (>=1.0)"]
+testing = ["coverage (>=6.2)", "hypothesis (>=5.7.1)"]
+
+[[package]]
+name = "pytest-mock"
+version = "3.12.0"
+description = "Thin-wrapper around the mock package for easier use with pytest"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pytest-mock-3.12.0.tar.gz", hash = "sha256:31a40f038c22cad32287bb43932054451ff5583ff094bca6f675df2f8bc1a6e9"},
+    {file = "pytest_mock-3.12.0-py3-none-any.whl", hash = "sha256:0972719a7263072da3a21c7f4773069bcc7486027d7e8e1f81d98a47e701bc4f"},
+]
+
+[package.dependencies]
+pytest = ">=5.0"
+
+[package.extras]
+dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
 name = "python-dotenv"
@@ -1533,13 +1601,13 @@ files = [
 
 [[package]]
 name = "uvicorn"
-version = "0.27.1"
+version = "0.28.0"
 description = "The lightning-fast ASGI server."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "uvicorn-0.27.1-py3-none-any.whl", hash = "sha256:5c89da2f3895767472a35556e539fd59f7edbe9b1e9c0e1c99eebeadc61838e4"},
-    {file = "uvicorn-0.27.1.tar.gz", hash = "sha256:3d9a267296243532db80c83a959a3400502165ade2c1338dea4e67915fd4745a"},
+    {file = "uvicorn-0.28.0-py3-none-any.whl", hash = "sha256:6623abbbe6176204a4226e67607b4d52cc60ff62cda0ff177613645cefa2ece1"},
+    {file = "uvicorn-0.28.0.tar.gz", hash = "sha256:cab4473b5d1eaeb5a0f6375ac4bc85007ffc75c3cc1768816d9e5d589857b067"},
 ]
 
 [package.dependencies]
@@ -1874,4 +1942,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "193789e295131288387177164770492bba086da17016e18e37943041fc923c55"
+content-hash = "7a0205bc8f29b421771af801f03723e0e177c130b27c2148c58d4f28f2e9f5a6"
