@@ -23,7 +23,8 @@ class CoinCapAPI:
             params = {}
         async with aiohttp.ClientSession(headers=self.headers) as session:
             async with session.get(f'{self.base_url}/{endpoint}', params=params) as response:
-                return await response.json()
+                resp = await response.json()
+                return resp['data']
 
     async def get_assets(self, limit: int = 10, offset: int = 0):
         return await self._get_request('assets', params={'limit': limit, 'offset': offset})

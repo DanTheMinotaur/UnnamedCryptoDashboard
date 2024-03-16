@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": "bitcoin",
+      "rank": "1",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "supply": "19655912.0000000000000000",
+      "maxSupply": "21000000.0000000000000000",
+      "marketCapUsd": "1336134882950.4658170062810400",
+      "volumeUsd24Hr": "14247839546.4500364049575361",
+      "priceUsd": "67976.2344759411731700",
+      "changePercent24Hr": "-0.3470058647256635",
+      "vwap24Hr": "68801.1608505640897096",
+      "explorer": "https://blockchain.info/"
+    },
+    {
+      "id": "ethereum",
+      "rank": "2",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "supply": "120080570.3952014300000000",
+      "maxSupply": null,
+      "marketCapUsd": "439196979153.0051575645774477",
+      "volumeUsd24Hr": "7735717191.1390272453272168",
+      "priceUsd": "3657.5190949505684474",
+      "changePercent24Hr": "-0.9616763884713631",
+      "vwap24Hr": "3712.4548819259533682",
+      "explorer": "https://etherscan.io/"
+    },
+    {
+      "id": "tether",
+      "rank": "3",
+      "symbol": "USDT",
+      "name": "Tether",
+      "supply": "103313954568.1765000000000000",
+      "maxSupply": null,
+      "marketCapUsd": "103409218170.9979899787748167",
+      "volumeUsd24Hr": "32269522535.8936396154825621",
+      "priceUsd": "1.0009220787571211",
+      "changePercent24Hr": "-0.0316964778161348",
+      "vwap24Hr": "1.0005782998163815",
+      "explorer": "https://www.omniexplorer.info/asset/31"
+    },
+    {
+      "id": "binance-coin",
+      "rank": "4",
+      "symbol": "BNB",
+      "name": "BNB",
+      "supply": "166801148.0000000000000000",
+      "maxSupply": "166801148.0000000000000000",
+      "marketCapUsd": "98369201089.8627434258335808",
+      "volumeUsd24Hr": "1676699168.4393430313093621",
+      "priceUsd": "589.7393529321677296",
+      "changePercent24Hr": "-0.7024889225388033",
+      "vwap24Hr": "609.0594836111115564",
+      "explorer": "https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+    }
+  ],
+  "timestamp": 1710610288276
+}
