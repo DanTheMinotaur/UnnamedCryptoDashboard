@@ -80,4 +80,4 @@ async def test_get_asset_history_interval_exception():
     with pytest.raises(CoinCapAPI.CoinCapAPIException) as ex:
         await coincap.get_asset_history('abc', invalid_interval)
 
-        assert f"'abc' is invalid, valid options are {CoinCapAPI.HISTORY_INTERVALS}" in str(ex)
+        assert f"'{invalid_interval}' is invalid, valid options are {CoinCapAPI.HISTORY_INTERVALS}" in str(ex)
