@@ -1,6 +1,6 @@
+from tortoise import run_async
 from .db.models.crypto import Crypto
 from .datasource.coincap import CoinCapAPI
-from tortoise import run_async
 from .db.init_db import init_db, models_append
 
 
@@ -13,16 +13,11 @@ async def cryptos(coincap: CoinCapAPI, asset_limit: int = 2000):
         if len(assets) == 0:
             break
         models = [Crypto(name=a['name'], symbol=a['symbol']) for a in assets]
-        await Crypto.bulk_create(models)
+        await Crypto.bulk_create(models, ignore_conflicts=True)
         asset_count += len(assets)
-    # models = [Crypto(name=e[0], symbol=e[1]) for e in entries]
-    # await Crypto.bulk_create(models)
-
-
-
 
 
 if __name__ == "__main__":
     c = CoinCapAPI()
-    run_async(init_db(models_append('db')))
-    # run_async(cryptos(c))
+    run_async(init_db(models_append('app.db')))
+    run_async(cryptos(c))
