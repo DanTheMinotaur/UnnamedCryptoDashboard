@@ -1,9 +1,15 @@
 import aiohttp
 from datetime import datetime
+from .abs import DataSource
 
-class CoinCapAPI:
+
+class CoinCapAPI(DataSource):
     class CoinCapAPIException(Exception):
         pass
+
+    SOURCE = 'coincap.io'
+    # API lookup key for using endpoints
+    LOOKUP_KEY = 'id'
 
     def __init__(self, auth_token: str = None, gzip: bool = True):
         self.base_url = 'https://api.coincap.io/v2'

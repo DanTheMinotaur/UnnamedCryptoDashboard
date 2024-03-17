@@ -4,13 +4,14 @@ from app.db.models.holdings import Holdings
 from app.db.models.price_history import CryptoPriceHistory
 from tortoise.exceptions import IntegrityError
 
-btc_test_crypto = Crypto.create(name='Bitcoin', symbol='BTC')
-
 
 @pytest.mark.asyncio
 async def test_crypto_model(db_conn):
-    c1 = await btc_test_crypto
+    meta = {"test": "data"}
+
+    c1 = await Crypto.create(name='Bitcoin', symbol='BTC', meta=meta)
     assert c1 is not None
+    assert c1.meta == meta
 
     c2 = await Crypto.create(name='Ethereum', symbol='ETH')
     assert c2 is not None
@@ -29,7 +30,7 @@ async def test_crypto_model(db_conn):
 
 @pytest.mark.asyncio
 async def test_holdings_model(db_conn):
-    btc = await btc_test_crypto
+    btc = await Crypto.create(name='Bitcoin', symbol='BTC')
     u1 = 0.12
     u2 = 0.000345
     await Holdings.create(units=u1, crypto=btc)
@@ -37,7 +38,6 @@ async def test_holdings_model(db_conn):
 
     _all = Holdings.all()
     assert len(await _all) == 2
-
 
 # @pytest.mark.asyncio
 # async def test_price_history_model():
